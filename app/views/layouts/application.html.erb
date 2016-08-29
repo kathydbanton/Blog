@@ -12,7 +12,7 @@
 	<div id="sidebar">
 		<div id="logo">
 			<%= link_to root_path do %>
-				<%= image_tag "logo.svg" %>
+				<%= image_tag "logo-gray-4.png" %>
 			<% end %>
 		</div>
 
@@ -33,7 +33,7 @@
 		</ul>
 
 		<% if !user_signed_in? %>
-			<p class="sign_in">Admin Login"</p>
+    <p class="sign_in"><a href="/users/sign_in">"Admin Login"</a></p>
 		<% end %>
 	</div>
 
@@ -50,7 +50,7 @@
 			<% if user_signed_in? %>
 				<div class="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
-					<button class="button">Log Out</button>
+					<button class="button"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></button>
 				</div>
 			<% end %>
 		</div>
